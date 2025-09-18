@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-us" class="theme-blue">
 <head>
     <!-- Global Include -->
     <!--#include virtual="/NHISDataQueryTool/TemplatePackage/4.0/includes/head-content.html" -->
-    <title>Quarterly Early Release tables</title>
+    <title>NHIS-Select Demographic Subgroups Summary Health Statistics</title>
 
-    <link rel="shortcut icon" href="/NHISDataQueryTool/TemplatePackage/4.0/assets/imgs/favicon.ico">
+    <!--<link rel="shortcut icon" href="cdcfavicon.ico">-->
     <!--<link rel="shortcut icon" href="/NHISDataQueryTool/TemplatePackage/4.0/images/favicon.ico">-->
     <meta name="robots" content="index, archive" />
     <meta name="description" content="" />
@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="widgetbig058.css">
     <link rel="stylesheet" href="bootstrap.min.css">
 </head>
+
 <body class="no-js">
 
     <!-- Global Include -->
@@ -66,21 +67,23 @@
                 <div class="info-box ">
                     <div class="full-screen">
                         <h2>
-                            Interactive Quarterly Early Release Estimates
-                            <img src="icon_cond.png" alt="conditions" class="app-image" />
+                            Interactive Summary Health Statistics for Adults,
+                            <br>
+                            by Select Demographic Subgroups
+                            <!--     Detailed Race and Hispanic Origin Interactive Summary Health Statistics for Adults &#8212 Three-year Averages (2019-2021) -->
+                            <img src="icon_ins.png" alt="healthcare clipboard" class="app-image" />
                         </h2>
                         <p>
-                            Interactive Quarterly Early Release Estimates provide health statistics based on data from the 2019-2022 National Health Interview Survey (NHIS) for selected health topics for adults aged 18 years and over. All estimates are unadjusted percentages based on preliminary data files and are released prior to final data editing and final weighting to provide access to the most recent information from the NHIS. Estimates presented here are based on quarterly data. Estimates based on half-year data,
-                            with groupings by demographic characteristics, are available in the
-                            <a href="https://wwwn.cdc.gov/NHISDataQueryTool/ER_Biannual/index_biannual.html" target="_blank_">Interactive Biannual Early Release Estimates.</a>
-                            <!--        </p> -->
-                            Estimates based on the 1997–2018 NHIS can be found in
-                            <a href="https://www.cdc.gov/nchs/nhis/erkeyindicators.htm" target="_blank_"> Previous Early Release Reports on Key Health Indicators. </a>
-                            <!--    <p>
-                            Use the options below to select a statistic of interest, the data view ("Trends over time" or "Cross-sectional"), data years, and grouping variables. If you select "Trends over time", you can choose a range of years. The "Cross-sectional" view displays a single year, which can be stratified by up to two grouping variables. Once a grouping variable is selected, a dropdown menu will appear, enabling selection of specific levels in each group.</p>  -->
+                            Interactive Summary Health Statistics for Adults, by Select Demographic Subgroups
+                            <!--Detailed Race and Hispanic Origin Interactive Summary Health Statistics for Adults &#8212 Three-year Averages (2019–2021)-->
+                            provide estimates as three-year averages of selected health topics for adults aged 18 years and over based on final data from the National Health Interview Survey.
+                            Estimates can be grouped by select demographic subgroups by clicking on the "Group by" dropdown menu.
+                            This level of detail is not available in the annual Interactive Summary Health Statistics for Adults. Single year estimates can be found in
+                            <a href="https://wwwn.cdc.gov/NHISDataQueryTool/SHS_adult/index.html" target="_blank_"> Interactive Summary Health Statistics for Adults</a>
                         </p>
+
                         <p>
-                            After you select the available health topic, the table will automatically be updated. Estimates can be viewed as a plot under the "Charts" tab, with line graphs for trends over time. The "Technical notes" tab displays a link to technical documentation on the measures and methodology used to produce the estimates. The generated table and graph can be downloaded with the download button  <img height="25px" src="download-white.png" alt="download button"> under each tab. To view the Korn-Graubard (KG) 95% confidence intervals, select the "95% confidence intervals" checkbox.
+                            After you select the available health topics, the table will automatically be updated. The data can be viewed as a plot under the "Charts" tab, with line graphs for trends over time (when available) and grouped bar graphs for the cross-sectional view. The "Technical Notes" tab displays links to technical documentation on the measures and methodology used to produce the estimates. The generated table and graph can be downloaded with the download button <img height="25px" src="download-white.png"> under each tab. To view the Korn-Graubard confidence intervals, select the "95% confidence intervals" checkbox.
                         </p>
                     </div>
                 </div>
@@ -89,115 +92,142 @@
                         <form class="usa-form-large">
                             <label for="stat_var">Select topic:</label>
                             <select id="stat_var">
-                                <optgroup label="Health status">
-                                    <option value="Disabled" selected>Disability status</option>
-                                    <option value="Wrk_dys_miss">Six or more workdays missed due to illness, injury, or disability</option>
-                                    <option value="Asthma">Asthma episode</option>
-                                    <option value="Hypertension">Diagnosed hypertension</option>
-                                    <option value="Pain">Regularly experienced chronic pain</option>
-                                    <option value="Anxious">Regularly had feelings of worry, nervousness, or anxiety</option>
-                                    <option value="Depressed">Regularly had feelings of depression</option>
+                                <optgroup label="Selected Circulatory Diseases">
+                                    <option value="ANGINA" selected>Angina/angina pectoris</option>
+                                    <option value="CHD">Coronary heart disease</option>
+                                    <option value="CHOLEST">High cholesterol</option>
+                                    <option value="HYP_R_A">Diagnosed hypertension</option>
+                                    <option value="HEARTTK">Heart attack/myocardial infarction</option>
                                 </optgroup>
-                                <optgroup label="Health care service use">
-                                    <option value="Mntl_Therapy">Counseled by a mental health professional</option>
-                                    <option value="Dental">Dental exam or cleaning</option>
-                                    <option value="Bld_prss_chk">Blood pressure check</option>
-                                    <option value="Flu_vacc">Receipt of influenza vaccination</option>
-                                    <option value="Doc_visit">Doctor visit</option>
-                                    <option value="ER_visit">Hospital emergency department visit</option>
+                                <optgroup label="Selected Respiratory Diseases">
+                                    <option value="COPD">COPD, emphysema, chronic bronchitis</option>
+                                    <option value="ASAT12M_R_A">Asthma episode/attack</option>
+                                    <option value="ASMSTILL">Current asthma</option>
                                 </optgroup>
-                                <optgroup label="Health care service access">
-                                    <option value="No_Medcl">Did not get needed medical care due to cost</option>
-                                    <option value="Mental">Did not get needed mental health care due to cost</option>
-                                    <option value="No_Pres">Did not take medication as prescribed to save money</option>
+                                <optgroup label="Cancer">
+                                    <option value="ANYCAN">Any type of cancer</option>
+                                    <option value="BREAST">Breast cancer</option>
+                                    <option value="CERVICAL">Cervical cancer</option>
+                                    <option value="PROSTATE">Prostate cancer</option>
+                                    <option value="SKINCAN">Any skin cancer</option>
                                 </optgroup>
-                                <optgroup label="Health insurance coverage">
-                                    <option value="Uninsured">Uninsured at time of interview: Adults aged 18-64</option>
-                                    <option value="Private">Private health insurance coverage at time of interview: Adults aged 18-64</option>
-                                    <option value="Public">Public health plan coverage at time of interview: Adults aged 18-64</option>
-                                    <option value="Exchange">Exchange-based health plan coverage at time of interview: Adults aged 18-64</option>
+                                <optgroup label="Selected Diseases and Conditions">
+                                    <option value="ARTHRITIS">Arthritis diagnosis</option>
+<!--                                <option value="PAFRQ3M_R_A">Regularly experienced chronic pain</option>  --> 
+                                    <option value="DIABETES">Diagnosed diabetes</option>
+                                    <option value="OBESE">Obesity</option>
                                 </optgroup>
-                                <optgroup label="Health behaviors">
-                                    <option value="Smk_now">Current cigarette smoking</option>
-                                    <option value="e_cig">Current electronic cigarette use</option>
+                                <optgroup label="Mental Health">
+                                    <option value="ANX_R_A">Regularly had feelings of worry, nervousness, or anxiety</option>
+                                    <option value="ANXIMED">Taking prescription medication for feelings of worry, nervousness, or anxiety</option>
+                                    <option value="DEP_R_A">Regularly had feelings of depression</option>
+                                    <option value="DEPRESSMED">Taking prescription medication for feelings of depression</option>
+                                    <option value="MHTHRPY_R_A">Counseled by a mental health professional</option>
+                                </optgroup>
+                                <optgroup label="Health Status">
+                                    <option value="HLTHSTAT">Fair or poor health status</option>
+                                    <option value="EMPMSS6DYS">Six or more workdays missed due to illness, injury, or disability</option>
+                                </optgroup>
+                                <optgroup label="Difficulties in Functioning">
+                                    <option value="DISABLED2">Disability status (composite)</option>
+                                   <option value="ANYDIFF">Functioning difficulties status (composite)</option>  
+                                    <option value="HEARING">Any difficulty hearing</option>
+                                    <option value="VISION">Any difficulty seeing</option>
+                                    <option value="MOBILITY">Any difficulty walking or climbing steps</option>
+                                    <option value="COMMUNIC">Any difficulty communicating</option>
+                                    <option value="UPPBODY">Any difficulty with self care</option>
+                                    <option value="COGNITION">Any difficulty remembering or concentrating</option>
+                                </optgroup>
+                                <optgroup label="Health Behaviors">
+                                    <option value="SMKCUR_R_A">Current cigarette smoking</option>
+                                    <option value="ECIGCUR_R_A">Current electronic cigarette use</option>
+                                </optgroup>
+                                <optgroup label="Health Insurance Coverage">
+                                    <option value="PUBCOV">Public health plan coverage at time of interview: Adults aged 18-64</option>
+                                    <option value="PRICOV">Private health insurance coverage at time of interview: Adults aged 18-64</option>
+                                    <option value="EXCOV">Exchange-based health plan coverage at time of interview: Adults aged 18-64</option>
+                                    <option value="UNINSURED">Uninsured at time of interview: Adults aged 18-64</option>
+                                    <option value="UNSMORY">Uninsured for more than one year: Adults aged 18-64</option>
+                                    <option value="ANYPER">Uninsured for at least part of the past year: Adults aged 18-64</option>
+                                </optgroup>
+                                <optgroup label="Cost-Related Problems Accessing Care in the Past 12 Months">
+                                    <option value="MDNG12M_R_A">Did not get needed medical care due to cost</option>
+                                    <option value="DELAY">Delayed getting medical care due to cost</option>
+                                    <option value="MHTHND_R_A">Did not get needed mental health care due to cost</option>
+                                    <option value="RXNA12M_R_A">Did not take medication as prescribed to save money</option>
+                                </optgroup>
+                                <optgroup label="Health Care Use in the Past 12 Months">
+                                    <option value="LASTDR_R_A">Doctor visit</option>
+                                    <option value="WELLVISIT">Wellness visit</option>
+                                    <option value="EMER12M_R_A">Hospital emergency department visit</option>
+                                    <option value="URGECARE">Urgent care center or retail health clinic visit</option>
+                                    <!--     <option value="DENPREV_R_A">Dental exam or cleaning</option>  -->
+                                    <option value="SHFL12M_R_A">Receipt of influenza vaccination</option>
+                                    <!--     <option value="BPLAST_R_A">Blood pressure check</option>  -->
+                                    <option value="PRESCMED">Prescription medication use</option>
+                                </optgroup>
+                                <optgroup label="Other Health Care">
+                                    <option value="REG_CARE">Has a usual place of care</option>
+                                    <option value="PNEUMSHT">Ever received a pneumococcal vaccination</option>
                                 </optgroup>
                             </select>
                             <input id="showSEs" type="checkbox" name="showSEs" value="showSEs" class="" />
                             <label for="showSEs">95% confidence intervals</label>
-                            <!--      <fieldset id="data-view" class="usa-fieldset-inputs usa-sans shiny-input-radiogroup em-fieldset"> -->
-                            <!--       <legend class="em-legend">Select data view:</legend> -->
-                            <!-- <ul class="usa-unstyled-list">              -->
-                            <!-- <div class="shiny-options-group">
-                                <li style="display: inline-block; padding-right: 30px;">
+                            <fieldset id="data-view" class="usa-fieldset-inputs usa-sans shiny-input-radiogroup em-fieldset">
+                                <legend class="em-legend">Select data view:</legend>
+                                <!-- <ul class="usa-unstyled-list">   -->
+                                <div class="shiny-options-group">
+                                    <!--<li style="display: inline-block; padding-right: 30px;">-->
                                     <input id="data-view-trend" type="radio" name="data-view" value="trend" checked="checked" />
-                                    <!--                <label for="data-view-trend">Trends over time</label>
-                                 </li>
-                                 <li style="display: inline-block; padding-right: 30px;">
-                                     <input id="data-view-cross" type="radio" name="data-view" value="cross" />
-                                     <!--                 <label for="data-view-cross">Single quarter</label>
-                                 </li>
-                            </div> -->
-                            </ul>
+                                    <label for="data-view-trend">Multiple time periods</label>
+                                    <!--</li>-->
+                                    <!--<li style="display: inline-block; padding-right: 30px;">-->
+                                    <input id="data-view-cross" type="radio" name="data-view" value="cross" />
+                                    <label for="data-view-cross">Single time period</label>
+                                    <!--</li>-->
+                                    <!--</li>-->
+                                    <!-- </ul>   -->
                             </fieldset>
                             <fieldset>
                                 <legend class="usa-sr-only">Select years</legend>
-                                <label for="flex-parent">Select time frame:</label>
                                 <div class="flex-parent">
                                     <div class="flex-child-fill year-start">
-                                        <label for="year-start">Single quarter:</label>
+                                        <label for="year-start">From:</label>
                                         <select id="year-start">
-                                            <!--    <option value="2020 Q3, Jul-Sep">2020 Q3, Jul-Sep</option>
-                                            <option value="2020 Q2, Apr-Jun">2020 Q2, Apr-Jun</option>
-                                             <option value="2020 Q1, Jan-Mar">2020 Q1, Jan-Mar</option>
-                                             <option value="2019 Q4, Oct-Dec">2019 Q4, Oct-Dec</option>
-                                             <option value="2019 Q3, Jul-Sep">2019 Q3, Jul-Sep</option>
-                                             <option value="2019 Q2, Apr-Jun">2019 Q2, Apr-Jun</option>-->
-                                            <option value="2019 Q1, Jan-Mar" selected>2019 Q1, Jan-Mar</option>
-                                            <option value="2019 Q2, Apr-Jun">2019 Q2, Apr-Jun</option>
-                                            <option value="2019 Q3, Jul-Sep">2019 Q3, Jul-Sep</option>
-                                            <option value="2019 Q4, Oct-Dec">2019 Q4, Oct-Dec</option>
-                                            <option value="2020 Q1, Jan-Mar">2020 Q1, Jan-Mar</option>
-                                            <option value="2020 Q2, Apr-Jun">2020 Q2, Apr-Jun</option>
-                                            <option value="2020 Q3, Jul-Sep">2020 Q3, Jul-Sep</option>
-                                            <option value="2020 Q4, Oct-Dec">2020 Q4, Oct-Dec</option>
-                                            <option value="2021 Q1, Jan-Mar">2021 Q1, Jan-Mar</option>
-                                            <option value="2021 Q2, Apr-Jun">2021 Q2, Apr-Jun</option>
-                                            <option value="2021 Q3, Jul-Sep">2021 Q3, Jul-Sep</option>
-                                            <option value="2021 Q4, Oct-Dec">2021 Q4, Oct-Dec</option>
-                                            <option value="2022 Q1, Jan-Mar">2022 Q1, Jan-Mar</option>
-                                            <option value="2022 Q2, Apr-Jun">2022 Q2, Apr-Jun</option>
-                                            <option value="2022 Q3, Jul-Sep">2022 Q3, Jul-Sep</option>
+                                            <option value="2019-2021" selected>2019-2021</option>
+                                            <option value="2020-2022">2020-2022</option>
+                                            <option value="2021-2023">2021-2023</option>
+                                            <option value="2022-2024">2021-2024</option>
                                         </select>
                                     </div>
                                     <div class="flex-child-fill year-main">
                                         <label for="year">to:</label>
                                         <select id="year">
-                                            <option value="2022 Q3, Jul-Sep" selected>2022 Q3, Jul-Sep></option>
-                                            <option value="2022 Q2, Apr-Jun">2022 Q2, Apr-Jun</option>
-                                            <option value="2022 Q1, Jan-Mar">2022 Q1, Jan-Mar</option>
-                                            <option value="2021 Q4, Oct-Dec">2021 Q4, Oct-Dec</option>
-                                            <option value="2021 Q3, Jul-Sep">2021 Q3, Jul-Sep</option>
-                                            <option value="2021 Q2, Apr-Jun">2021 Q2, Apr-Jun</option>
-                                            <option value="2021 Q1, Jan-Mar">2021 Q1, Jan-Mar</option>
-                                            <option value="2020 Q4, Oct-Dec">2020 Q4, Oct-Dec</option>
-                                            <option value="2020 Q3, Jul-Sep">2020 Q3, Jul-Sep</option>
-                                            <option value="2020 Q2, Apr-Jun">2020 Q2, Apr-Jun</option>
-                                            <option value="2020 Q1, Jan-Mar">2020 Q1, Jan-Mar</option>
-                                            <option value="2019 Q4, Oct-Dec">2019 Q4, Oct-Dec</option>
-                                            <option value="2019 Q3, Jul-Sep">2019 Q3, Jul-Sep</option>
-                                            <option value="2019 Q2, Apr-Jun">2019 Q2, Apr-Jun</option>
-                                            <option value="2019 Q1, Jan-Mar">2019 Q1, Jan-Mar</option>
+                                            <option value="2022-2024" selected>2022-2024</option>
+                                            <option value="2021-2023">2021-2023</option>
+                                            <option value="2020-2022">2020-2022</option>
+                                            <option value="2019-2021">2019-2021</option>
                                         </select>
                                     </div>
                                 </div>
                             </fieldset>
                             <fieldset class="">
-                                <!--        <label for="col_var" class="">Group by:</label>  -->
+                                <label for="col_var" class="">Group by:</label>
                                 <div role="group">
                                     <div role="group">
                                         <select id="col_var">
-                                            <optgroup label="Demographic characteristics">
-                                                <option value="ind" selected>Total</option>
+                                            <optgroup label="Racial and Ethnic Groups">
+                                                <option value="ind">Total</option>
+                                                <option value="race">Single race</option>
+                                                <option value="racetwo">Multiple race</option>
+                                                <option value="racethree">Single or multiple races</option>
+                                                <option value="hisprace" selected>Hispanic or Latino origin and race</option>
+                                                <option value="asiandet">Asian detailed groups</option>
+                                                <option value="hispasian">Asian detailed groups with Hispanic or Latino origin</option>
+                                                <option value="hisp">Hispanic or Latino origin</option>
+                                                <option value="hispdet">Hispanic or Latino origin detailed groups</option>
+ <!--                                               <option value="res">Population living in/outside AIAN areas</option>
+                                                <option value="ai_res">Population living in/outside AIAN areas by selected race groups</option>  -->
                                             </optgroup>
                                         </select>
                                     </div>
@@ -262,12 +292,12 @@
                     </div>
                     <div class="col-sm-12 col-md-9">
                         <ul id="meps-tabs" class="nav nav-pills">
-                            <li class="active">
+                            <li class="">
                                 <a data-toggle="tab" href="#table-tab" id="table-pill">
                                     <span class="tab-title table-tab">Table</span>
                                 </a>
                             </li>
-                            <li class="">
+                            <li class="active">
                                 <a data-toggle="tab" href="#plot-tab" id="plot-pill">
                                     <span class="tab-title plot-tab">Charts</span>
                                 </a>
@@ -282,120 +312,114 @@
                             <div id="updating-overlay">
                                 <div id="updating-text">Updating, please wait...</div>
                             </div>
-                            <div id="table-tab" class="tab-pane active">
+                            <div id="table-tab" class="tab-pane">
                                 <div class="caption-block">
+                                    <span id="table-title" class="caption"></span>
                                     <a id="dl-table" title="" data-original-title="Download table" tabindex="0" class="em-tooltip usa-button download-button">
                                         <span class="usa-sr-only">Download table</span>
                                     </a>
-                                    <span id="table-title" class="caption"></span>
                                     <!--      <span id="table-caption" role="region" aria-live="polite" class="caption"></span> -->
                                 </div>
                                 <div id="loading">Loading data...</div>
                                 <table id="meps-table" cellspacing="0" width="100%"></table>
                                 <div id="table-footnotes" role="region" aria-live="polite">
                                     <span id="table-caption2"></span>
-                                    <!--     <h3>Quarterly trends</h3>
-                                    <span id="trendnotes"></span>  -->
                                     <h3>Notes</h3>
                                     <span id="qnotes"></span>
-                                    <!--         <span id="table-caption3"></span>  -->
+                                    <!--       <span id="table-caption3"></span>  -->
+                                    <!--          <br></br>   -->
+                                    <br>
+                                    <span id="notes"></span>
+                                    <br>
                                     <br>
                                     <p>
-                                        Due to the COVID-19 pandemic, NHIS data collection switched to a telephone-only mode beginning on March 19, 2020.
-                                        Personal visits (with telephone attempts first) resumed in all areas in September 2020. In addition, from August-December 2020, a subsample of adult respondents
-                                        who completed the NHIS in 2019 were recontacted by telephone and asked to participate again. Response rates were lower and respondent characteristics were different
-                                        in April–December 2020. Differences observed in estimates between April–December 2020 and other time periods may have been impacted by these differences in respondent characteristics.
-                                    </p>
-                                    <!--         <p>
-                                                Due to the COVID-19 pandemic, NHIS data collection switched to a telephone-only mode beginning on March 19, 2020.
-                                                Personal visits resumed in all areas in September 2020, but cases were still attempted by telephone first.
-                                                These changes resulted in <a href=" https://www.cdc.gov/nchs/data/nhis/earlyrelease/nonresponse202102-508.pdf" target="_blank_">
-                                                    lower response rates and differences in respondent characteristics
-                                                </a> for April 2020&#8211March 2021. Differences observed in estimates between April 2020&#8211March 2021 and earlier time periods may still be impacted by these changes.
-                                            </p>
-                                               <p>
-                                                Due to the COVID-19 pandemic, NHIS data collection switched to a telephone-only mode beginning March 19, 2020.
-                                                This resulted in lower response rates and differences in respondent characteristics for Quarter 2 (April–June).
-                                                 Differences observed in estimates between April–June 2020 and earlier time periods may be partially or fully attributable to these changes.
-                                                 </p>-->
-                                    <p>
-                                        Estimates are based on household interviews of a sample of the civilian noninstitutionalized population and are based on preliminary data files.
-                                        Unknowns were not included in the denominators when calculating percentages. For more information on the data source, methods, and definitions used for this table or chart, refer to the
-                                        <a href="https://wwwn.cdc.gov/NHISDataQueryTool/ER_Quarterly/earlyrelease202301_tech.pdf" target="_blank_">
-                                            Technical Notes for Early Release Estimates Based on data from the National Health Interview Survey.
+                                        Based on household interviews of a sample of the civilian noninstitutionalized population.
+                                        Estimates are based on responses about the sample adult. Data came from the Sample Adult File
+                                        and were weighted using the Sample Adult weight, divided by three. Unless otherwise noted,
+                                        unknowns were not included in the denominators when calculating percentages. Two-sided 95% confidence intervals
+                                        are calculated using the Clopper-Pearson method adapted for complex surveys by Korn and Graubard.
+                                        In 2019, the NHIS questionnaire was redesigned to better meet the needs of data users.
+                                        Due to changes in weighting and design methodology, direct comparisons between estimates for 2019
+                                        and beyond to earlier years should be made with caution, as the impact of these changes has not been fully evaluated at this time.
+                                        <!-- <a href="https://www.cdc.gov/nchs/nhis/ADULTS/www/index.htm" target="_blank_">  (https://www.cdc.gov/nchs/nhis/ADULTS/www/index.htm). </a>    -->
+                                        For more information on the data source, methods, and definitions used for this table, refer to Technical Notes for
+                                        Interactive Summary Health Statistics for Adults, by Select Demographic Subgroups
+                                        <a href="https://wwwn.cdc.gov/NHISDataQueryTool/SHS_adult3yr/SHS_3yr_Tech_Notes.pdf" target="_blank_">
+                                            (available from:  https://wwwn.cdc.gov/NHISDataQueryTool/SHS_adult3yr/SHS_3yr_Tech_Notes.pdf)
                                         </a>
                                     </p>
                                     <h3>Suggested citation</h3>
                                     <div id="citation"></div>
-                                    <div id="source"></div>
+                                    </p><p>
+                                        <div id="source"></div>
                                 </div>
                             </div>
-                            <div id="plot-tab" class="tab-pane">
+                            <div id="plot-tab" class="tab-pane active">
                                 <div class="caption-block plot-dependent">
+                                    <span id="plot-title" class="caption"></span>
                                     <a id="dl-plot" title="" data-original-title="Download plot" tabindex="0" class="em-tooltip usa-button download-button">
                                         <span class="usa-sr-only">Download plot</span>
                                     </a>
-                                    <span id="plot-title" class="caption"></span>
                                     <!--        <span id="plot-caption" role="region" aria-live="polite" class="caption"></span>  -->
                                 </div>
                                 <div id="meps-plot" class="plot-dependent"></div>
                                 <div id="plot-warning">No non-missing data available for selections. Please try again.</div>
                                 <div id="plot-footnotes" class="in-front plot-dependent" role="region" aria-live="polite"></div>
-                                <!--      <h3>Quarterly trends</h3>
-                                <span id="plot-trendnotes"></span>  -->
                                 <h3>Notes</h3>
-                                <span id="plot-qnotes"></span>
                                 <!--       <span id="plot-caption3"></span>  -->
+                                <span id="plot-qnotes"></span>
+                                <br>
+                                <span id="plotnotes"></span>
+                                <span id="notes"></span>
                                 <br>
                                 <p>
-                                    Due to the COVID-19 pandemic, NHIS data collection switched to a telephone-only mode beginning on March 19, 2020.
-                                    Personal visits (with telephone attempts first) resumed in all areas in September 2020. In addition, from August-December 2020, a subsample of adult respondents
-                                    who completed the NHIS in 2019 were recontacted by telephone and asked to participate again. Response rates were lower and respondent characteristics were different
-                                    in April–December 2020. Differences observed in estimates between April–December 2020 and other time periods may have been impacted by these differences in respondent characteristics.
-                                </p>
-                                <p>
-                                    Estimates are based on household interviews of a sample of the civilian noninstitutionalized population and are based on preliminary data files.
-                                    Unknowns were not included in the denominators when calculating percentages. For more information on the data source,
-                                    methods, and definitions used for this table or chart, refer to the
-                                    <a href="https://wwwn.cdc.gov/NHISDataQueryTool/ER_Quarterly/earlyrelease202301_tech.pdf" target="_blank_">
-                                        Technical Notes for Early Release Estimates Based on data from the National Health Interview Survey.
+                                    Based on household interviews of a sample of the civilian noninstitutionalized population.
+                                    Estimates are based on responses about the sample adult. Data came from the Sample Adult File
+                                    and were weighted using the Sample Adult weight, divided by three. Unless otherwise noted,
+                                    unknowns were not included in the denominators when calculating percentages. Two-sided 95% confidence intervals
+                                    are calculated using the Clopper-Pearson method adapted for complex surveys by Korn and Graubard.
+                                    In 2019, the NHIS questionnaire was redesigned to better meet the needs of data users.
+                                    Due to changes in weighting and design methodology, direct comparisons between estimates for 2019
+                                    and beyond to earlier years should be made with caution, as the impact of these changes has not been fully evaluated at this time.
+                                    <!-- <a href="https://www.cdc.gov/nchs/nhis/ADULTS/www/index.htm" target="_blank_">  (https://www.cdc.gov/nchs/nhis/ADULTS/www/index.htm). </a>    -->
+                                    For more information on the data source, methods, and definitions used for this table, refer to Technical Notes for
+                                    Interactive Summary Health Statistics for Adults, by Select Demographic Subgroups
+                                    <a href="https://wwwn.cdc.gov/NHISDataQueryTool/SHS_adult3yr/SHS_3yr_Tech_Notes.pdf" target="_blank_">
+                                        (available from:  https://wwwn.cdc.gov/NHISDataQueryTool/SHS_adult3yr/SHS_3yr_Tech_Notes.pdf)
                                     </a>
                                 </p>
                                 <h3>Suggested citation</h3>
                                 <div id="plotcitation"></div>
-                                <div id="plotsource"></div>
+                                </p><p>
+                                    <div id="plotsource"></div>
                             </div>
                             <div id="code-tab" class="tab-pane">
-                                <h3>Interactive Quarterly Early Release Estimates</h3>
-                                <p>
-                                    <!--        Interactive Quarterly Early Release Estimates are tables and charts of descriptive statistics for various health measures
-                                    including health status, health care service access, health care service utilization, and health behaviors.
-                                    All estimates are unadjusted percentages based on preliminary data files and are released prior to final data editing and final weighting
-                                    to provide access to the most recent information from the National Health Interview Survey.-->
-                                    For more information on the data source, methods, and definitions used for these tables and charts,
-                                    refer to the
-                                    <a href="https://wwwn.cdc.gov/NHISDataQueryTool/ER_Quarterly/earlyrelease202301_tech.pdf" target="_blank_">
-                                        Technical Notes for Early Release Estimates Based on data from the National Health Interview Survey.
-                                    </a>
-                                </p>
-                                <p>
-                                    Estimates based on the 1997–2018 NHIS can be found by clicking the link below:
-                                <p></p>
-                                <a href="https://www.cdc.gov/nchs/nhis/erkeyindicators.htm " target="_blank_">Early Release estimates for key health indicators based on the 1997–2018 NHIS</a>
-                                </p>
-
+                                <h3>Interactive Summary Health Statistics for Adults, by Select Demographic Subgroups</h3>
+                                <!--       <p>
+    Summary Health Statistics are tables of descriptive statistics for various health measures including health status,
+    conditions, health behaviors, activity limitations, health insurance coverage, and access and utilization of health care.
+    Measures are shown for selected characteristics such as sex, age, race, ethnicity, family income, and region of the
+    United States. Starting with the 2013 NHIS, Summary Health Statistics are provided in online tables. For the 1997-2012 NHIS,
+    Summary Health Statistics were provided in three Vital and Health Statistics Series 10 Reports (one each for adults,
+    children, and the whole population), and for the 1962-1996 NHIS, similar descriptive statistics were provided in Current
+    Estimates reports, which were also Vital and Health Statistics Series 10 Reports.
+    </p>  -->
+                                For more information on the data source, methods, and definitions used for this table, refer to Technical Notes for
+                                Interactive Summary Health Statistics for Adults, by Select Demographic Subgroups
+                                <a href="https://wwwn.cdc.gov/NHISDataQueryTool/SHS_adult3yr/SHS_3yr_Tech_Notes.pdf" target="_blank_">
+                                    (available from:  https://wwwn.cdc.gov/NHISDataQueryTool/SHS_adult3yr/SHS_3yr_Tech_Notes.pdf)
+                                </a>
+                                <br></br>
                                 Access to the full dataset can be found on Data.CDC.gov by clicking the link below:
                                 <p></p>
-                                <a href="https://data.cdc.gov/NCHS/NHIS-Adult-3-Year-Summary-Health-Statistics/krhz-spsc" target="_blank_">NHIS Interactive Quarterly Early Release Estimates</a>
+                                <a href="https://data.cdc.gov/NCHS/NHIS-Adult-3-Year-Summary-Health-Statistics/krhz-spsc" target="_blank_">Interactive Summary Health Statistics for Adults, by Select Demographic Subgroups</a>
                                 </p>
-                                <!--   <p>Previous year Summary Health Statistics may be accessed by clicking the links below:</p>
-                                <p><a href="/nchs/nhis/SHS/tables.htm">Tables of Summary Health Statistics (2013 NHIS and forward)</a></p>
-                                <p><a href="/nchs/nhis/SHS_1997_2012.htm">Summary Health Statistics Vital and Health Statistics Series 10 Reports (1997&ndash;2012 NHIS)</a></p>
-                                <p><a href="/nchs/nhis/quest_doc.htm">Current Estimates Vital and Health Statistics Series 10 Reports (1962&ndash;1996 NHIS)</a></p>-->
                             </div>
                         </div>
                     </div>
                 </div>
+
+
 
 
 
@@ -412,7 +436,7 @@
 
         <div>
             <a class='right usa-button usa-button-big usa-button-outline external-link'
-               href="https://github.com/HHS-NHIS/3YR_SHS_TABLES_ADULTS.git" target="_blank">
+               href="https://github.com/HHS-NHIS/ER_Biannual" target="_blank">
 
                 View on GitHub <img src="externallink.gif" alt="External Link" height="14" width="14">
 
@@ -469,61 +493,51 @@
     <!--#include virtual="/NHISDataQueryTool/TemplatePackage/4.0/includes/svg-other.html" -->
     <!-- Add your page or site specific javascript here -->
     <!-- Add any page or site specific metrics properties here -->
+    <script>
+        s.pageName = document.title;
+        s.channel = "NCHS";
+        siteCatalyst.setAzEntry("");
+        siteCatalyst.setLevel1("");
+        siteCatalyst.setLevel2("");
+        siteCatalyst.setLevel3("");
+        siteCatalyst.setLevel4("");
+        siteCatalyst.setLevel5("");
+    </script>
+    <script>
+        window.shortTitle = "";
+        window.pageOptions = window.pageOptions || {};
+        window.pageOptions.navigation = window.pageOptions.navigation || { fourthLevelNavTitle: "Table of Contents", showFourthLevel: true };
+        window.pageOptions.navigation.breadcrumbs = {
+            mode: 'auto',
+            showCurrentPage: false
+        };
+        window.CDC.tp4.public.appInit(window.pageOptions);
+    </script>
 
+    <!--#include virtual="/NHISDataQueryTool/TemplatePackage/4.0/includes/page-bottom-extras.html" -->
 
-<script src="jquery.min.js"></script>
-<script src="bootstrap.min.js"></script>
+    <script src="datatables.min.js"></script>
+    <script src="plotly-latest.min.js"></script>
 
-<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="uswds.min.js"></script>
 
-<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-  
+    <script type="text/javascript" src="rgbcolor.js"></script>
 
-<!--  <script src="simplemodal.js"></script> -->
-<!--   <script src="simplemodal-1.4.4.js"></script> -->
-  
-<!--   <script src="https://www.ahrq.gov/resources/js/libs/jquery.simplemodal.js"></script>   -->
-<!--   <script src="https://www.ahrq.gov/resources/js/plugins.js"></script>   -->
+    <script type="text/javascript" src="StackBlur.js"></script>
 
-<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
-<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
-
-
-
-
-<!--   <script src="plugins.js"></script>  -->
-
-<!--   <script src="ahrq_script.js"></script> -->
-  
-  
-
-  <script src = "datatables.min.js"></script>
-  <script src = "plotly-latest.min.js"></script>   
-  <script src = "uswds.min.js"></script>
-
-
-
-  <script type="text/javascript" src="rgbcolor.js"></script>
-  <script type="text/javascript" src="StackBlur.js"></script>
-  <script type="text/javascript" src="canvg.js"></script>
+    <script type="text/javascript" src="canvg.js"></script>
 
 
 
-  <script type="text/javascript" src="basic.js"></script>
+    <script type="text/javascript" src="basic.js"></script>
+
+    <script src="functions.js"></script>
+    <script src="init.js"></script>
+    <script src="notes.js"></script>
+    <script src="em.js"></script>
 
 
-
-  
-<script src="functions.js"></script>
-<script src="init.js"></script>
-<script src="notes.js"></script>
-<script src="em.js"></script>
-
-
-
-
- </body>
-
-
-
+</body>
 </html>
+
+
